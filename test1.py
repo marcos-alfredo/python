@@ -5,6 +5,10 @@ from selenium.webdriver.common.keys import Keys
 
 class Test1(unittest.TestCase):
 
+    """
+    test
+    """
+
     def setUp(self):
         self.driver = webdriver.Chrome()
 
@@ -14,7 +18,8 @@ class Test1(unittest.TestCase):
 
         expectedResult = "Google"
 
-        self.assertIn(expectedResult, driver.title, "Expected: " + expectedResult + " - Actual: " + driver.title)
+        self.assertIn(expectedResult, driver.title, "Expected: " + \
+            expectedResult + " - Actual: " + driver.title)
 
     def test_search(self):
         driver = self.driver
@@ -30,7 +35,8 @@ class Test1(unittest.TestCase):
 
         expectedResult = "teste"
 
-        self.assertIn(expectedResult, driver.title, "Expected: " + expectedResult + " - Actual: " + driver.title)
+        self.assertIn(expectedResult, driver.title, "Expected: " + \
+            expectedResult + " - Actual: " + driver.title)
 
     def tearDown(self):
         self.driver.close()
