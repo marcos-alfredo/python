@@ -17,7 +17,7 @@ actions = ActionChains(driver)
 actions.double_click(search).perform()
 time.sleep(2)
 
-#actions.drag_and_drop(search, bar).perform()
+# actions.drag_and_drop(search, bar).perform()
 
 driver.close()
 driver.quit()

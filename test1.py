@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+
 class Test1(unittest.TestCase):
 
     """
@@ -18,13 +19,14 @@ class Test1(unittest.TestCase):
 
         expectedResult = "Google"
 
-        self.assertIn(expectedResult, driver.title, "Expected: " + \
-            expectedResult + " - Actual: " + driver.title)
+        self.assertIn(expectedResult, driver.title, "Expected: " +
+                      expectedResult + " - Actual: " + driver.title)
 
     def test_search(self):
         driver = self.driver
         driver.get("https://www.google.com")
-        while driver.execute_script("return document.readyState;") != "complete":
+        while driver.execute_script(
+                                "return document.readyState;") != "complete":
             time.sleep(1)
         searchBox = driver.find_element_by_name("q")
         searchBox.click()
@@ -35,8 +37,8 @@ class Test1(unittest.TestCase):
 
         expectedResult = "teste"
 
-        self.assertIn(expectedResult, driver.title, "Expected: " + \
-            expectedResult + " - Actual: " + driver.title)
+        self.assertIn(expectedResult, driver.title, "Expected: " +
+                      expectedResult + " - Actual: " + driver.title)
 
     def tearDown(self):
         self.driver.close()
