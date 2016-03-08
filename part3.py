@@ -20,3 +20,4 @@ time.sleep(2)
 #actions.drag_and_drop(search, bar).perform()
 
 driver.close()
+driver.quit()
