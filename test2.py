@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+
 class GoogleSearch(unittest.TestCase):
 
     def setUp(self):
@@ -22,7 +23,6 @@ class GoogleSearch(unittest.TestCase):
         elem.send_keys(Keys.RETURN)
         time.sleep(1)
         self.assertIn("Google", driver.title)
-
 
     def tearDown(self):
         self.driver.close()
