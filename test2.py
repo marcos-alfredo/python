@@ -12,7 +12,7 @@ class GoogleSearch(unittest.TestCase):
     def test_001_title(self):
         driver = self.driver
         driver.get("http://www.google.com")
-        self.assertIn("Google1", driver.title)
+        self.assertIn("Google", driver.title)
 
     def test_002_search(self):
         driver = self.driver

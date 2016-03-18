@@ -1,23 +1,33 @@
+# actions = ActionChains(driver)
+# actions.double_click(search).perform()
+
+import unittest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 
-driver = webdriver.Chrome()
-driver.get("http://www.google.com")
-time.sleep(1)
 
-search = driver.find_element_by_name("q")
+class Test1(unittest.TestCase):
 
-search.send_keys("teste")
-time.sleep(1)
-search.send_keys(Keys.RETURN)
-time.sleep(2)
-actions = ActionChains(driver)
-actions.double_click(search).perform()
-time.sleep(2)
+    def setUp(self):
+        self.driver = webdriver.Chrome()
 
-# actions.drag_and_drop(search, bar).perform()
+    def test_001_open_tab(self):
+        driver = self.driver
+        driver.get("https://www.google.com")
 
-driver.close()
-driver.quit()
+        elem = driver.find_element_by_
+        driver.send_keys(Keys.CONTROL, 't')
+
+        expectedResult = "Google"
+
+        self.assertIn(expectedResult, driver.title, "Expected: " +
+                      expectedResult + " - Actual: " + driver.title)
+
+    def tearDown(self):
+        self.driver.close()
+        self.driver.quit()
+
+if __name__ == "__main__":
+    unittest.main()
